@@ -1,0 +1,1371 @@
+{
+	"info": {
+		"_postman_id": "112e4935-abea-4293-9c0e-cd4e5f54e60d",
+		"name": "市场部-明星资源信息记录表",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "明星推荐进度表首页接口",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{IP}}/v2/market-dept/star-resource-info-record/index?timeType=first_report_time&beginTime=2020-04-20&endTime=2020-04-28&emergency_level=low&level=1&follower=蓝",
+					"host": [
+						"{{IP}}"
+					],
+					"path": [
+						"v2",
+						"market-dept",
+						"star-resource-info-record",
+						"index"
+					],
+					"query": [
+						{
+							"key": "timeType",
+							"value": "first_report_time"
+						},
+						{
+							"key": "beginTime",
+							"value": "2020-04-20"
+						},
+						{
+							"key": "endTime",
+							"value": "2020-04-28"
+						},
+						{
+							"key": "name",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "emergency_level",
+							"value": "low",
+							"description": "紧急程度：可选值（high，高，mid，中，low，低）"
+						},
+						{
+							"key": "level",
+							"value": "1",
+							"description": "级别：可选值（1，一线，2，二线，3，三线）"
+						},
+						{
+							"key": "follower",
+							"value": "蓝"
+						},
+						{
+							"key": "page",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "perPage",
+							"value": "5",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "对应部门合作艺人首页接口",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{IP}}/v2/market-dept/star-resource-info-record/dept-coop-star?dept=advertising_dept",
+					"host": [
+						"{{IP}}"
+					],
+					"path": [
+						"v2",
+						"market-dept",
+						"star-resource-info-record",
+						"dept-coop-star"
+					],
+					"query": [
+						{
+							"key": "dept",
+							"value": "advertising_dept",
+							"description": "advertising_dept/广告部，marketing_dept/营销部  必填"
+						},
+						{
+							"key": "timeType",
+							"value": "first_report_time",
+							"description": "时间类型，可选值（first_report_time/初次汇报时间，expected_completion_time/预计完成时间，filming_time/拍摄时间，auth_time/授权时间）",
+							"disabled": true
+						},
+						{
+							"key": "beginTime",
+							"value": "2020-04-20",
+							"disabled": true
+						},
+						{
+							"key": "endTime",
+							"value": "2020-04-28",
+							"disabled": true
+						},
+						{
+							"key": "name",
+							"value": "林",
+							"disabled": true
+						},
+						{
+							"key": "emergency_level",
+							"value": "low",
+							"description": "紧急程度：可选值（high，高，mid，中，low，低）",
+							"disabled": true
+						},
+						{
+							"key": "level",
+							"value": "1",
+							"description": "级别：可选值（1，一线，2，二线，3，三线）",
+							"disabled": true
+						},
+						{
+							"key": "rating",
+							"value": "A",
+							"description": "评级：可选值（A，B，C，D）",
+							"disabled": true
+						},
+						{
+							"key": "follower",
+							"value": "蓝",
+							"disabled": true
+						},
+						{
+							"key": "page",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "perPage",
+							"value": "5",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "明星合作信息修改历史接口",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{IP}}/v2/market-dept/star-resource-info-record/history?recommend_progress_id=1&page=1&perPage=5",
+					"host": [
+						"{{IP}}"
+					],
+					"path": [
+						"v2",
+						"market-dept",
+						"star-resource-info-record",
+						"history"
+					],
+					"query": [
+						{
+							"key": "recommend_progress_id",
+							"value": "1",
+							"description": "bm_star_recommend_progress表的id  必填"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "perPage",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "添加推荐明星接口",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "小红帽03",
+							"type": "text"
+						},
+						{
+							"key": "emergency_level",
+							"value": "low",
+							"description": "紧急程度：可选值（high，高，mid，中，low，低",
+							"type": "text"
+						},
+						{
+							"key": "level",
+							"value": "1",
+							"description": "级别：可选值（1，一线，2，二线，3，三线）",
+							"type": "text"
+						},
+						{
+							"key": "first_report_time",
+							"value": "2020-04-25",
+							"type": "text"
+						},
+						{
+							"key": "follower",
+							"value": "蓝",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{IP}}/v2/market-dept/star-resource-info-record/create-recommended-star",
+					"host": [
+						"{{IP}}"
+					],
+					"path": [
+						"v2",
+						"market-dept",
+						"star-resource-info-record",
+						"create-recommended-star"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "推荐明星详情接口",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{IP}}/v2/market-dept/star-resource-info-record/recommend-star-detail?id=4",
+					"host": [
+						"{{IP}}"
+					],
+					"path": [
+						"v2",
+						"market-dept",
+						"star-resource-info-record",
+						"recommend-star-detail"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "4",
+							"description": "bm_star_recommend_progress表的id 必填"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "更新明星推荐接口",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id",
+							"value": "2",
+							"description": "必填",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "李冰冰",
+							"description": "必填",
+							"type": "text"
+						},
+						{
+							"key": "emergency_level",
+							"value": "high",
+							"description": "紧急程度：（high，高，mid，中，low，低）必填",
+							"type": "text"
+						},
+						{
+							"key": "level",
+							"value": "1",
+							"description": "必填",
+							"type": "text"
+						},
+						{
+							"key": "first_report_time",
+							"value": "2020-04-25",
+							"description": "必填",
+							"type": "text"
+						},
+						{
+							"key": "follower",
+							"value": "蓝善清",
+							"description": "必填",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{IP}}/v2/market-dept/star-resource-info-record/update-recommend-info?",
+					"host": [
+						"{{IP}}"
+					],
+					"path": [
+						"v2",
+						"market-dept",
+						"star-resource-info-record",
+						"update-recommend-info"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "删除明星推荐接口",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{IP}}/v2/market-dept/star-resource-info-record/delete-star-progress?id=2",
+					"host": [
+						"{{IP}}"
+					],
+					"path": [
+						"v2",
+						"market-dept",
+						"star-resource-info-record",
+						"delete-star-progress"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "2",
+							"description": "bm_star_recommend_progress表的id  必填"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "明星综合信息接口",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{IP}}/v2/market-dept/star-resource-info-record/comprehensive-info?recommend_progress_id=3",
+					"host": [
+						"{{IP}}"
+					],
+					"path": [
+						"v2",
+						"market-dept",
+						"star-resource-info-record",
+						"comprehensive-info"
+					],
+					"query": [
+						{
+							"key": "recommend_progress_id",
+							"value": "3",
+							"description": "bm_star_recommend_progress表的id  必填"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "更新明星综合信息接口",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "recommend_progress_id",
+							"value": "6",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "李冰冰",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "10",
+							"description": "价格/万",
+							"type": "text"
+						},
+						{
+							"key": "fraction",
+							"value": "85",
+							"description": "分数",
+							"type": "text"
+						},
+						{
+							"key": "cost_effective",
+							"value": "78",
+							"description": "性价比",
+							"type": "text"
+						},
+						{
+							"key": "coop_rights",
+							"value": "合作46465132",
+							"description": "合作权益",
+							"type": "text"
+						},
+						{
+							"key": "sex",
+							"value": "female",
+							"description": "性别，male/男，female/女",
+							"type": "text"
+						},
+						{
+							"key": "birth",
+							"value": "1998-09-08",
+							"type": "text"
+						},
+						{
+							"key": "remark",
+							"value": "备注",
+							"type": "text"
+						},
+						{
+							"key": "weibo_fans",
+							"value": "232",
+							"description": "微博粉丝/万",
+							"type": "text"
+						},
+						{
+							"key": "douyin_fans",
+							"value": "200",
+							"description": "抖音分数/万",
+							"type": "text"
+						},
+						{
+							"key": "little_red_book_fans",
+							"value": "10",
+							"description": "小红书粉丝/万",
+							"type": "text"
+						},
+						{
+							"key": "baidu_index",
+							"value": "20",
+							"description": "百度指数",
+							"type": "text"
+						},
+						{
+							"key": "endorsement",
+							"value": "代言情况",
+							"description": "代言情况",
+							"type": "text"
+						},
+						{
+							"key": "film_works_group",
+							"value": "[{\"film_works\":\"影视作品01\"}, {\"film_works\":\"影视作品02\"}]",
+							"description": "影视作品",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{IP}}/v2/market-dept/star-resource-info-record/save-star-comprehensive-info",
+					"host": [
+						"{{IP}}"
+					],
+					"path": [
+						"v2",
+						"market-dept",
+						"star-resource-info-record",
+						"save-star-comprehensive-info"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "上传头像接口",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+						"key": "Content-Type",
+						"value": "multipart/form-data",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "小明01",
+							"type": "text"
+						},
+						{
+							"key": "imageFile",
+							"type": "file",
+							"src": "/C:/Users/F1498/Desktop/软件测试/test04.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://gdttest.wqc.so/v2/market-dept/star-resource-info-record/upload-avatar",
+					"protocol": "https",
+					"host": [
+						"gdttest",
+						"wqc",
+						"so"
+					],
+					"path": [
+						"v2",
+						"market-dept",
+						"star-resource-info-record",
+						"upload-avatar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "经理初审接口",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id",
+							"value": "12",
+							"description": "bm_star_recommend_progress表的id",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "yes",
+							"description": "审核结果，yes/是，no/否",
+							"type": "text"
+						},
+						{
+							"key": "initial_opinion",
+							"value": "可以。。。",
+							"description": "审核意见，注意，当审核结果为no的时候，审核意见为必填",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{IP}}/v2/market-dept/star-resource-info-record/initial-review",
+					"host": [
+						"{{IP}}"
+					],
+					"path": [
+						"v2",
+						"market-dept",
+						"star-resource-info-record",
+						"initial-review"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "我要推荐接口",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id",
+							"value": "12",
+							"description": "bm_star_recommend_progress表的id",
+							"type": "text"
+						},
+						{
+							"key": "dept",
+							"value": "advertising_dept",
+							"description": "advertising_dept/广告部，marketing_dept/营销部",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{IP}}/v2/market-dept/star-resource-info-record/recommend",
+					"host": [
+						"{{IP}}"
+					],
+					"path": [
+						"v2",
+						"market-dept",
+						"star-resource-info-record",
+						"recommend"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "部门审核接口",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id",
+							"value": "8",
+							"description": "bm_dept_coop_star表的id",
+							"type": "text"
+						},
+						{
+							"key": "coop",
+							"value": "yes",
+							"description": "是否合作，yes/是，no/否",
+							"type": "text"
+						},
+						{
+							"key": "coop_opinion",
+							"value": "通过",
+							"description": "合作意见，注意，当是否合作为no的时候，合作意见为必填",
+							"type": "text"
+						},
+						{
+							"key": "coop_product",
+							"value": "通过啦",
+							"description": "合作产品，注意，当是否合作为yes的时候，合作产品为必填",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{IP}}/v2/market-dept/star-resource-info-record/dept-audit",
+					"host": [
+						"{{IP}}"
+					],
+					"path": [
+						"v2",
+						"market-dept",
+						"star-resource-info-record",
+						"dept-audit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "重新推荐接口",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id",
+							"value": "7",
+							"description": "bm_star_recommend_progress表的id",
+							"type": "text"
+						},
+						{
+							"key": "dept",
+							"value": "marketing_dept",
+							"description": "advertising_dept/广告部，marketing_dept/营销部",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{IP}}/v2/market-dept/star-resource-info-record/again-recommend",
+					"host": [
+						"{{IP}}"
+					],
+					"path": [
+						"v2",
+						"market-dept",
+						"star-resource-info-record",
+						"again-recommend"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "经理终审接口",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id",
+							"value": "6",
+							"description": "bm_star_recommend_progress表的id",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "no",
+							"description": "审核结果，yes/是，no/否",
+							"type": "text"
+						},
+						{
+							"key": "final_opinion",
+							"value": "通过，审核意见",
+							"description": "审核意见，注意，当审核结果为no的时候，审核意见为必填",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{IP}}/v2/market-dept/star-resource-info-record/final-review",
+					"host": [
+						"{{IP}}"
+					],
+					"path": [
+						"v2",
+						"market-dept",
+						"star-resource-info-record",
+						"final-review"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "部门具体合作详情",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{IP}}/v2/market-dept/star-resource-info-record/coop-detail?id=4",
+					"host": [
+						"{{IP}}"
+					],
+					"path": [
+						"v2",
+						"market-dept",
+						"star-resource-info-record",
+						"coop-detail"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "4",
+							"description": "bm_dept_coop_star表的id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "更新部门具体合作内容",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id",
+							"value": "1",
+							"description": "bm_dept_coop_star表的id",
+							"type": "text"
+						},
+						{
+							"key": "progress",
+							"value": "进度",
+							"description": "进度描述",
+							"type": "text"
+						},
+						{
+							"key": "expected_completion_time",
+							"value": "2020-04-28",
+							"description": "预计完成时间",
+							"type": "text"
+						},
+						{
+							"key": "filming_time",
+							"value": "2020-04-25",
+							"description": "拍摄时间",
+							"type": "text"
+						},
+						{
+							"key": "auth_time",
+							"value": "2020-04-25",
+							"description": "授权时间",
+							"type": "text"
+						},
+						{
+							"key": "link",
+							"value": "www.baidu.com",
+							"description": "链接",
+							"type": "text"
+						},
+						{
+							"key": "rating",
+							"value": "A",
+							"description": "评级：可选值（A，B，C，D）",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{IP}}/v2/market-dept/star-resource-info-record/coop-contents",
+					"host": [
+						"{{IP}}"
+					],
+					"path": [
+						"v2",
+						"market-dept",
+						"star-resource-info-record",
+						"coop-contents"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "删除部门具体合作内容",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{IP}}/v2/market-dept/star-resource-info-record/delete-dept-coop-detail?id=1",
+					"host": [
+						"{{IP}}"
+					],
+					"path": [
+						"v2",
+						"market-dept",
+						"star-resource-info-record",
+						"delete-dept-coop-detail"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1",
+							"description": "bm_dept_coop_star表的id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "上传脚本",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "multipart/form-data",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "10",
+							"description": "bm_dept_coop_star表的id",
+							"type": "text"
+						},
+						{
+							"key": "scriptFile",
+							"description": "脚本文件，支持word文件和execl文件",
+							"type": "file",
+							"src": "/C:/Users/F1498/Desktop/测试2.csv"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{IP}}/v2/market-dept/star-resource-info-record/upload-script",
+					"host": [
+						"{{IP}}"
+					],
+					"path": [
+						"v2",
+						"market-dept",
+						"star-resource-info-record",
+						"upload-script"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "查看脚本",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{IP}}/v2/market-dept/star-resource-info-record/script?id=10",
+					"host": [
+						"{{IP}}"
+					],
+					"path": [
+						"v2",
+						"market-dept",
+						"star-resource-info-record",
+						"script"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "10",
+							"description": "bm_dept_coop_star表的id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "模糊搜索明星姓名",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{IP}}/v2/market-dept/star-resource-info-record/star-name?name=明",
+					"host": [
+						"{{IP}}"
+					],
+					"path": [
+						"v2",
+						"market-dept",
+						"star-resource-info-record",
+						"star-name"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "明"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "模糊搜索跟进人",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{IP}}/v2/market-dept/star-resource-info-record/follower?follower",
+					"host": [
+						"{{IP}}"
+					],
+					"path": [
+						"v2",
+						"market-dept",
+						"star-resource-info-record",
+						"follower"
+					],
+					"query": [
+						{
+							"key": "follower",
+							"value": null,
+							"description": "跟进人"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "下载导入模板",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{IP}}/v2/market-dept/star-resource-info-record/export-example",
+					"host": [
+						"{{IP}}"
+					],
+					"path": [
+						"v2",
+						"market-dept",
+						"star-resource-info-record",
+						"export-example"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "导入模板",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "multipart/form-data",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "excelFile",
+							"type": "file",
+							"src": "/C:/Users/F1498/Desktop/测试4.xlsx"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{IP}}/v2/market-dept/star-resource-info-record/import",
+					"host": [
+						"{{IP}}"
+					],
+					"path": [
+						"v2",
+						"market-dept",
+						"star-resource-info-record",
+						"import"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
